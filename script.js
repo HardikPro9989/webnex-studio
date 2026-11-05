@@ -199,3 +199,168 @@ if (floatingContact) {
 // ==========================================
 
 console.log("WEBNEX STUDIO website loaded successfully!");
+// ==========================================
+// PORTFOLIO POPUP PREVIEW SYSTEM
+// ==========================================
+
+const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+const portfolioPreviews = {
+    "Restaurant Website": {
+        description: "A modern restaurant website concept designed to showcase food, menus and customer experiences.",
+        features: [
+            "Attractive food showcase",
+            "Digital menu presentation",
+            "Restaurant information",
+            "Mobile-friendly layout"
+        ]
+    },
+
+    "Coaching Website": {
+        description: "A professional coaching website concept for presenting courses, learning programs and educational services.",
+        features: [
+            "Course information",
+            "Learning program showcase",
+            "Student-focused design",
+            "Responsive layout"
+        ]
+    },
+
+    "Automobile Website": {
+        description: "A premium automobile website concept designed to present vehicles, products and automotive services.",
+        features: [
+            "Automotive product showcase",
+            "Modern visual design",
+            "Service information",
+            "Responsive layout"
+        ]
+    }
+};
+
+if (portfolioCards.length) {
+
+    const modal = document.createElement("div");
+    modal.className = "portfolio-modal";
+
+    modal.innerHTML = `
+        <div class="portfolio-modal-content" role="dialog"
+             aria-modal="true" aria-labelledby="portfolioModalTitle">
+
+            <button class="portfolio-modal-close"
+                    aria-label="Close preview">&times;</button>
+
+            <span class="portfolio-modal-label">PROJECT PREVIEW</span>
+
+            <h2 id="portfolioModalTitle"></h2>
+
+            <p class="portfolio-modal-description"></p>
+
+            <div class="portfolio-modal-preview"></div>
+
+            <h3>Project Features</h3>
+
+            <ul class="portfolio-modal-features"></ul>
+
+            <p class="portfolio-modal-note">
+                This is a concept preview, not a live client website.
+            </p>
+
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeButton = modal.querySelector(".portfolio-modal-close");
+    const modalTitle = modal.querySelector("#portfolioModalTitle");
+    const modalDescription = modal.querySelector(".portfolio-modal-description");
+    const modalPreview = modal.querySelector(".portfolio-modal-preview");
+    const modalFeatures = modal.querySelector(".portfolio-modal-features");
+
+    let previousFocus = null;
+
+    function openPortfolioPreview(card) {
+
+        const title = card.querySelector(".portfolio-info h3")?.textContent.trim();
+
+        const previewData = portfolioPreviews[title];
+
+        if (!previewData) return;
+
+        previousFocus = document.activeElement;
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = previewData.description;
+
+        modalPreview.replaceChildren();
+
+        const visual = card.querySelector(".portfolio-image");
+
+        if (visual) {
+            modalPreview.appendChild(visual.cloneNode(true));
+        }
+
+        modalFeatures.replaceChildren();
+
+        previewData.features.forEach(feature => {
+            const item = document.createElement("li");
+            item.textContent = feature;
+            modalFeatures.appendChild(item);
+        });
+
+        modal.classList.add("active");
+        document.body.classList.add("portfolio-modal-open");
+
+        closeButton.focus();
+    }
+
+    function closePortfolioPreview() {
+
+        modal.classList.remove("active");
+        document.body.classList.remove("portfolio-modal-open");
+
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+    }
+
+    portfolioCards.forEach(card => {
+
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-haspopup", "dialog");
+
+        card.addEventListener("click", () => {
+            openPortfolioPreview(card);
+        });
+
+        card.addEventListener("keydown", event => {
+
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openPortfolioPreview(card);
+            }
+
+        });
+
+    });
+
+    closeButton.addEventListener("click", closePortfolioPreview);
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+            closePortfolioPreview();
+        }
+
+    });
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+            closePortfolioPreview();
+        }
+
+    });
+
+}
+

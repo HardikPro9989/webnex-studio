@@ -2810,3 +2810,285 @@ button, a {
         transform: none !important;
     }
 }
+
+/* =================================
+   WEBNEX STUDIO - MOBILE POLISH
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Hero content spacing */
+    .hero .hero-content {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Hero main heading */
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 40px);
+        line-height: 1.12;
+        letter-spacing: -1.2px;
+        text-align: center;
+    }
+
+    /* Hero description */
+    .hero-content > p {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hero bottom information */
+    .hero-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 16px 20px;
+    }
+
+    .hero-bottom span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+/* MOBILE FLOATING BUTTON POLISH */
+@media (max-width: 600px) {
+    .floating-contact {
+        width: 46px;
+        height: 46px;
+        right: 14px;
+        bottom: 18px;
+        font-size: 19px;
+        z-index: 1000;
+    }
+}
+
+/* ==================================
+   WEBNEX STUDIO - FINAL MOBILE POLISH
+================================== */
+
+@media (max-width: 600px) {
+
+    /* Floating Contact Arrow */
+    .floating-contact {
+        width: 46px;
+        height: 46px;
+        right: 14px;
+        bottom: 18px;
+        font-size: 19px;
+        z-index: 1000;
+    }
+
+    /* Brand Strip Spacing */
+    .brand-strip {
+        padding: 16px 0;
+        overflow: hidden;
+    }
+
+    .brand-strip-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 9px 10px;
+        padding: 0 14px;
+        text-align: center;
+    }
+
+    .brand-strip-content span {
+        white-space: nowrap;
+    }
+
+}
+
+/* MOBILE HAMBURGER MENU FIX */
+@media (max-width: 600px) {
+
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1100;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #ffffff;
+        margin: 4px 0;
+        border-radius: 3px;
+    }
+
+}
+
+/* ==========================================
+   PORTFOLIO POPUP PREVIEW SYSTEM
+========================================== */
+
+.portfolio-card {
+    cursor: pointer;
+}
+
+.portfolio-card:focus-visible {
+    outline: 2px solid #7c5cff;
+    outline-offset: 5px;
+}
+
+.portfolio-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(3, 5, 15, 0.88);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.portfolio-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 38px;
+    border: 1px solid rgba(124, 92, 255, 0.4);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #111526, #080b16);
+    box-shadow: 0 0 60px rgba(91, 65, 255, 0.2);
+    transform: translateY(25px) scale(0.97);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-modal.active .portfolio-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.portfolio-modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    background: #1b2032;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.portfolio-modal-label {
+    display: block;
+    color: #9b82ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.portfolio-modal-content h2 {
+    color: white;
+    font-size: clamp(25px, 5vw, 38px);
+    margin-bottom: 12px;
+}
+
+.portfolio-modal-description {
+    color: #aeb6cc;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.portfolio-modal-preview {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 15px;
+    margin-bottom: 28px;
+}
+
+.portfolio-modal-preview .portfolio-image {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 0;
+}
+
+.portfolio-modal-preview img {
+    max-width: 100%;
+}
+
+.portfolio-modal-content h3 {
+    color: white;
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.portfolio-modal-features {
+    padding-left: 22px;
+    color: #c3cbe0;
+    line-height: 2;
+}
+
+.portfolio-modal-features li::marker {
+    color: #8b70ff;
+}
+
+.portfolio-modal-note {
+    color: #8993ad;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+body.portfolio-modal-open {
+    overflow: hidden;
+}
+
+/* MOBILE POPUP */
+
+@media (max-width: 600px) {
+
+    .portfolio-modal {
+        padding: 12px;
+    }
+
+    .portfolio-modal-content {
+        padding: 23px 18px;
+        max-height: 90vh;
+        border-radius: 17px;
+    }
+
+    .portfolio-modal-preview .portfolio-image {
+        min-height: 200px;
+    }
+
+    .portfolio-modal-close {
+        width: 36px;
+        height: 36px;
+    }
+
+}
