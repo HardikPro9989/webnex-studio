@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate Academy | Learn Beyond Limits</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f7f8fc;color:#17213b;line-height:1.6}
+header{background:#101b38;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-size:23px;font-weight:800;color:#8eb4ff}
+nav{display:flex;gap:25px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#8eb4ff}
+.hero{padding:90px 8%;background:linear-gradient(120deg,#101b38,#263e75);color:white;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:35px}
+.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.12;margin:15px 0}
+.hero p{color:#d6def1;max-width:520px;margin-bottom:25px}
+.tag{color:#9fc0ff;font-weight:bold;letter-spacing:2px;font-size:12px}
+.btn{display:inline-block;background:#5689f5;color:white;padding:13px 23px;border-radius:7px;text-decoration:none;font-weight:bold}
+.hero img{width:100%;height:340px;object-fit:cover;border-radius:18px}
+section{padding:75px 8%}
+.heading{text-align:center;margin-bottom:38px}
+.heading h2{font-size:34px;margin-bottom:8px}
+.heading p{color:#71809c}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;padding:25px;border-radius:14px;box-shadow:0 8px 28px #18294b0c;border:1px solid #e9edf5}
+.card .icon{font-size:30px}
+.card h3{margin:12px 0 7px}
+.card p{color:#71809c;font-size:14px}
+.courses{background:#eef2fa}
+.course{padding:0;overflow:hidden}
+.course img{width:100%;height:175px;object-fit:cover}
+.course div{padding:20px}
+.price{color:#376fe0;font-weight:bold;margin-top:12px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;height:330px;object-fit:cover;border-radius:16px}
+.about p{color:#71809c;margin:15px 0}
+.stats{background:#172b55;color:white;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:20px}
+.stats h2{font-size:35px;color:#9fc0ff}
+.stats p{color:#d5def1}
+.testimonial{text-align:center;max-width:750px;margin:auto}
+.testimonial blockquote{font-size:21px;color:#52617e;margin:20px 0}
+.contact{background:#eef2fa}
+form{max-width:600px;margin:auto;background:white;padding:28px;border-radius:15px;box-shadow:0 8px 28px #18294b0c}
+input,textarea,select{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #dce2ee;border-radius:7px;font:inherit}
+button{border:0;cursor:pointer;width:100%;font-size:15px}
+footer{background:#101b38;color:#c5d0e5;padding:30px 8%;text-align:center}
+footer strong{color:white}
+@media(max-width:750px){
+header{padding:16px 5%;flex-wrap:wrap;gap:12px}
+nav{gap:13px;flex-wrap:wrap}
+nav a{font-size:12px}
+.hero{grid-template-columns:1fr;padding:65px 6%}
+.hero img{height:240px}
+section{padding:55px 6%}
+.grid{grid-template-columns:1fr}
+.about{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr}
+.heading h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">ELEVATE ACADEMY</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#results">Results</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<div>
+<span class="tag">YOUR FUTURE STARTS HERE</span>
+<h1>Learn Today.<br>Lead Tomorrow.</h1>
+<p>Discover your potential with expert guidance, structured learning and a supportive educational environment.</p>
+<a href="#courses" class="btn">Explore Courses →</a>
+</div>
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000" alt="Students learning together">
+</div>
+
+<section id="courses" class="courses">
+<div class="heading">
+<h2>Explore Our Courses</h2>
+<p>Learning programs designed to help students move forward.</p>
+</div>
+<div class="grid">
+<div class="card course">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700" alt="Business studies">
+<div><h3>Commerce Foundation</h3><p>Build strong foundations in business and commerce subjects.</p><div class="price">View Course Details →</div></div>
+</div>
+<div class="card course">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700" alt="Computer learning">
+<div><h3>Computer Skills</h3><p>Explore digital skills, programming and practical computer learning.</p><div class="price">View Course Details →</div></div>
+</div>
+<div class="card course">
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700" alt="Exam preparation">
+<div><h3>Exam Preparation</h3><p>Organised study support and practice for academic success.</p><div class="price">View Course Details →</div></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="about">
+<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=900" alt="Students in classroom">
+<div>
+<span class="tag">ABOUT OUR ACADEMY</span>
+<h2>Education That Builds Confidence</h2>
+<p>At Elevate Academy, our concept is simple: make learning clear, engaging and meaningful. We believe every student deserves guidance and an opportunity to grow.</p>
+<p>Our learning approach focuses on strong concepts, regular practice and continuous improvement.</p>
+<a href="#contact" class="btn">Get in Touch</a>
+</div>
+</div>
+</section>
+
+<div class="stats" id="results">
+<div><h2>Expert</h2><p>Learning Guidance</p></div>
+<div><h2>Smart</h2><p>Study Approach</p></div>
+<div><h2>Focused</h2><p>Student Support</p></div>
+</div>
+
+<section>
+<div class="testimonial">
+<span class="tag">STUDENT EXPERIENCE</span>
+<h2>Learning Made Meaningful</h2>
+<blockquote>“A good learning environment makes difficult concepts easier to understand and helps students stay motivated.”</blockquote>
+<strong>— Sample Student Feedback</strong>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="heading">
+<h2>Start Your Learning Journey</h2>
+<p>Send us an enquiry to know more about our learning programs.</p>
+</div>
+<form id="enquiryForm">
+<label>Your Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter your email" required>
+<label>Interested Course</label>
+<select id="course" required>
+<option value="">Select a course</option>
+<option>Commerce Foundation</option>
+<option>Computer Skills</option>
+<option>Exam Preparation</option>
+</select>
+<label>Your Message</label>
+<textarea id="message" rows="4" placeholder="Write your enquiry"></textarea>
+<button class="btn" type="submit">Send Enquiry</button>
+<p id="formMessage" style="margin-top:12px;font-size:13px"></p>
+</form>
+</section>
+
+<footer>
+<strong>ELEVATE ACADEMY</strong>
+<p>Learn Beyond Limits.</p>
+<p>© 2026 Elevate Academy. Concept Demo by WEBNEX STUDIO.</p>
+</footer>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("formMessage").textContent="Thank you! This is a demo enquiry form.";
+});
+</script>
+</body>
+</html>
