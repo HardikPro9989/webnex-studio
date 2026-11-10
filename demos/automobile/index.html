@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JBTO MOTORS | Drive Your Dreams</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#090d16;
+    color:#fff;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#0c1220;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #202a3b;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#398cff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#dce5f5;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#398cff;
+}
+
+.hero{
+    min-height:580px;
+    padding:90px 8%;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,#090d16 15%,#090d1699 65%,transparent),
+    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1800') center/cover;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.tag{
+    color:#398cff;
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+h1{
+    font-size:clamp(40px,6vw,70px);
+    line-height:1.08;
+    margin:18px 0;
+}
+
+.hero p{
+    color:#c2ccdc;
+    margin-bottom:28px;
+    max-width:480px;
+}
+
+.btn{
+    display:inline-block;
+    background:#398cff;
+    color:white;
+    padding:13px 23px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1769d5;
+    transform:translateY(-2px);
+}
+
+section{
+    padding:75px 8%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading h2{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.heading p{
+    color:#91a0b8;
+}
+
+.cars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:23px;
+}
+
+.car{
+    background:#111a2a;
+    border:1px solid #25334a;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.car:hover{
+    transform:translateY(-7px);
+    border-color:#398cff;
+}
+
+.car img{
+    width:100%;
+    height:205px;
+    object-fit:cover;
+}
+
+.car-info{
+    padding:22px;
+}
+
+.car-info h3{
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.car-info p{
+    color:#9baac1;
+    font-size:14px;
+}
+
+.car-info a{
+    display:inline-block;
+    color:#66a6ff;
+    text-decoration:none;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.about{
+    background:#101827;
+}
+
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.about p{
+    color:#aab6c9;
+    margin:15px 0;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature{
+    background:#111a2a;
+    padding:25px;
+    border-radius:10px;
+    border:1px solid #25334a;
+    transition:.3s;
+}
+
+.feature:hover{
+    border-color:#398cff;
+    transform:translateY(-5px);
+}
+
+.feature h3{
+    color:#66a6ff;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#aab6c9;
+    font-size:14px;
+}
+
+.contact{
+    background:#101827;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+    background:#0c1220;
+    padding:28px;
+    border-radius:12px;
+    border:1px solid #26354d;
+}
+
+label{
+    font-size:14px;
+    color:#dce5f5;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:13px;
+    margin:8px 0 17px;
+    background:#141e30;
+    border:1px solid #34435c;
+    border-radius:6px;
+    color:white;
+    font:inherit;
+}
+
+button{
+    width:100%;
+    border:0;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#formMessage{
+    color:#72b5ff;
+    font-size:14px;
+    margin-top:12px;
+}
+
+footer{
+    background:#070a11;
+    text-align:center;
+    padding:30px 8%;
+    color:#94a2b8;
+}
+
+footer strong{
+    color:white;
+    font-size:22px;
+}
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:70px 6%;
+        background-position:60% center;
+    }
+
+    section{
+        padding:55px 6%;
+    }
+
+    .cars,.features{
+        grid-template-columns:1fr;
+    }
+
+    .about-content{
+        grid-template-columns:1fr;
+    }
+
+    .about img{
+        height:240px;
+    }
+
+    .heading h2{
+        font-size:29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        JBTO <span>MOTORS.</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cars">Our Cars</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            EXPERIENCE THE DIFFERENCE
+        </span>
+
+        <h1>
+            Drive Your<br>
+            Dreams.
+        </h1>
+
+        <p>
+            Discover a world of premium automobiles,
+            modern design and exceptional driving experiences.
+        </p>
+
+        <a href="#cars" class="btn">
+            Explore Collection →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- CAR COLLECTION -->
+
+<section id="cars">
+
+    <div class="heading">
+
+        <span class="tag">OUR COLLECTION</span>
+
+        <h2>Featured Automobiles</h2>
+
+        <p>
+            Explore our concept collection of premium vehicles.
+        </p>
+
+    </div>
+
+    <div class="cars">
+
+        <div class="car">
+
+            <img
+            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900"
+            alt="Luxury sports car">
+
+            <div class="car-info">
+
+                <h3>Performance Series</h3>
+
+                <p>
+                    Designed for dynamic performance
+                    and an exciting driving experience.
+                </p>
+
+                <a href="#contact">Enquire Now →</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="car">
+
+            <img
+            src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900"
+            alt="Premium luxury car">
+
+            <div class="car-info">
+
+                <h3>Luxury Collection</h3>
+
+                <p>
+                    Elegant styling combined with
+                    comfort and premium details.
+                </p>
+
+                <a href="#contact">Enquire Now →</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="car">
+
+            <img
+            src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900"
+            alt="Premium SUV">
+
+            <div class="car-info">
+
+                <h3>Adventure SUV</h3>
+
+                <p>
+                    Bold design and versatile capability
+                    for every journey.
+                </p>
+
+                <a href="#contact">Enquire Now →</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <img
+        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1000"
+        alt="Premium automobile">
+
+        <div>
+
+            <span class="tag">ABOUT JBTO MOTORS</span>
+
+            <h2>
+                Where Innovation Meets Performance
+            </h2>
+
+            <p>
+                JBTO Motors is a premium automobile
+                showroom website concept created by
+                WEBNEX STUDIO.
+            </p>
+
+            <p>
+                Our concept focuses on elegant vehicle
+                presentation, modern design, easy navigation
+                and a smooth digital experience.
+            </p>
+
+            <a href="#contact" class="btn">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES SECTION -->
+
+<section id="services">
+
+    <div class="heading">
+
+        <span class="tag">WHAT WE OFFER</span>
+
+        <h2>Our Services</h2>
+
+        <p>
+            A showcase of services for a modern automobile business.
+        </p>
+
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+
+            <h3>01. Vehicle Showcase</h3>
+
+            <p>
+                Explore premium automobile collections
+                with attractive vehicle presentations.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>02. Customer Assistance</h3>
+
+            <p>
+                Get information and assistance through
+                a simple enquiry experience.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>03. Service Support</h3>
+
+            <p>
+                Discover vehicle care and maintenance
+                service information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+
+    <div class="heading">
+
+        <span class="tag">GET IN TOUCH</span>
+
+        <h2>Find Your Next Drive</h2>
+
+        <p>
+            Send an enquiry to explore our automobile concept collection.
+        </p>
+
+    </div>
+
+
+    <form id="enquiryForm">
+
+        <label>Your Name</label>
+
+        <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+        required>
+
+
+        <label>Email Address</label>
+
+        <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required>
+
+
+        <label>Interested Collection</label>
+
+        <select id="vehicle" required>
+
+            <option value="">
+                Select a collection
+            </option>
+
+            <option>Performance Series</option>
+
+            <option>Luxury Collection</option>
+
+            <option>Adventure SUV</option>
+
+        </select>
+
+
+        <label>Your Message</label>
+
+        <textarea
+        id="message"
+        rows="4"
+        placeholder="Write your enquiry">
+        </textarea>
+
+
+        <button class="btn" type="submit">
+            Submit Enquiry
+        </button>
+
+        <p id="formMessage"></p>
+
+    </form>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>JBTO MOTORS.</strong>
+
+    <p>Drive Your Dreams.</p>
+
+    <p>
+        © 2026 JBTO Motors.
+        Concept Demo by WEBNEX STUDIO.
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+document.getElementById("enquiryForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+    "Thank you! This is a demo enquiry form. No enquiry has been sent.";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
